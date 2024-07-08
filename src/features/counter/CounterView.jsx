@@ -1,12 +1,16 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { increment, decrement } from './counterSlice';
+import { increment, decrement, reset, incrementByAmount } from './counterSlice';
+import { useState } from 'react';
 
 const CounterView = () => {
+
+  const [incAmount, setIncAmount] = useState(0);
+  const dispatch = useDispatch();
   const count = useSelector((state) => {
     return state.counter.count;
   });
 
-  const dispatch = useDispatch();
+  const addVal = parseInt(incAmount) || 0;
 
   return (
     <section>
