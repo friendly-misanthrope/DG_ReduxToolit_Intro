@@ -1,9 +1,10 @@
 // import CSS and components here
+import CounterView from "./features/counter/CounterView";
 
 const App = () => {
   return (
     <div className='App'>
-      <h1>Hello World</h1>
+      <CounterView />
     </div>
   );
 }
