@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from '@reduxjs/toolkit';
+import { useDispatch, useSelector } from 'react-redux';
 import { increment, decrement } from './counterSlice';
 
 const CounterView = () => {
