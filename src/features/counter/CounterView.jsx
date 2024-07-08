@@ -12,6 +12,11 @@ const CounterView = () => {
 
   const addVal = parseInt(incAmount) || 0;
 
+  const resetGlobal = () => {
+    setIncAmount(0);
+    dispatch(reset());
+  }
+
   return (
     <section>
       <p>{count}</p>
