@@ -10,20 +10,42 @@ const CounterView = () => {
     return state.counter.count;
   });
 
-  const addVal = parseInt(incAmount) || 0;
+  const addVal = Number(incAmount) || 0;
 
   const resetGlobal = () => {
     setIncAmount(0);
     dispatch(reset());
   }
 
+  const changeHandler = (e) => {
+    setIncAmount(() => e.target.value)
+  }
+
+  const incrementAmount = (e) => {
+    e.preventDefault();
+    dispatch(incrementByAmount(addVal));
+    setIncAmount(0);
+  }
+
   return (
     <section>
+      <h2>Counter</h2>
       <p>{count}</p>
       <div>
         <button onClick={() => dispatch(decrement())}>-</button>
         <button onClick={() => dispatch(increment())}>+</button>
       </div>
+      
+
+      
+
+        <form>
+          <label htmlFor="incAmount">Increment Amount: </label>
+          <input type="text" value={addVal} name="incAmount" onChange={changeHandler}/>
+          <button onClick={incrementAmount}>Add Amount</button>
+          <button onClick={resetGlobal}>Reset All</button>
+        </form>
+    
     </section>
   );
 }

@@ -4,7 +4,27 @@
   font-size: 3rem;
 }
 
+section {
+  max-width: 22rem;
+  background-color: rgb(186, 196, 206);
+  margin: 0 auto;
+  border-radius: 2rem;
+}
+
 button {
   width: 5rem;
   margin: 0 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  margin: 0 auto;
+  max-width: 18rem;
+}
+
+form button {
+  width: 9rem;
+  margin: 1rem auto;
 }
